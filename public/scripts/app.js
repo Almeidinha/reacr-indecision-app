@@ -8,7 +8,7 @@ class IndecisionApp extends React.Component {
     this.handleAddOption = this.handleAddOption.bind(this);
     this.handleDeleteOption = this.handleDeleteOption.bind(this);
     this.state = {
-      options: props.options
+      options: []
     };
   }
   componentDidMount() {
@@ -101,10 +101,6 @@ const Header = props => {
   );
 };
 
-Header.defaultProps = {
-  title: 'Indecision'
-};
-
 const Action = props => {
   return React.createElement(
     'div',
@@ -132,7 +128,7 @@ const Options = props => {
     props.options.length === 0 && React.createElement(
       'p',
       null,
-      'Please add an option to get'
+      'Please add an option to get started'
     ),
     props.options.map(option => React.createElement(Option, {
       key: option,
