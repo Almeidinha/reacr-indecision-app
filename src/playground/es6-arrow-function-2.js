@@ -1,32 +1,30 @@
-// argument object - no longer bound with arrow function
+// arguments object - no longer bound with arrow functions
 
-const add =  (a,b) => {
-    //console.log(arguments); // throws error
-    return a + b;
-}
-
-console.log(add(5,1));
-
+const add = (a, b) => {
+  // console.log(arguments);
+  return a + b;
+};
+console.log(add(55, 1, 1001));
 
 // this keyword - no longer bound
 
 const user = {
-    name: "Mike",
-    cities: ["Guarapuava", "Joinville"],
-    printPlacesLived() {
-        return this.cities.map((city) => this.name + " has lived in " + city);
-    }
+  name: 'Andrew',
+  cities: ['Philadelphia', 'New York', 'Dublin'],
+  printPlacesLived() {
+    return this.cities.map((city) => this.name + ' has lived in ' + city);
+  }
 };
-
 console.log(user.printPlacesLived());
 
-// cc
-const multiplier = {
-    numbers: [10, 15, 20, 58, 99],
-    multiplyBy: 10,
-    multiplie() {
-        return this.numbers.map((number) => number * this.multiplyBy);
-    }
-}
+// Challenge area
 
-console.log(multiplier.multiplie());
+const multiplier = {
+  numbers: [10, 20, 30],
+  multiplyBy: 3,
+  multiply() {
+    return this.numbers.map((number) => number * this.multiplyBy);
+  }
+};
+
+console.log(multiplier.multiply());
